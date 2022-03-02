@@ -1,0 +1,84 @@
+\documentclass[a4paper,12pt,report]{jsbook}
+\setlength{\textwidth}{\fullwidth}
+\setlength{\evensidemargin}{\oddsidemargin}
+\usepackage{thesis}
+\usepackage{makeidx}
+\usepackage{amsmath}
+\usepackage{txfonts, float}
+\usepackage{here}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[noto-otc, unicode]{pxchfon}
+
+% 目次のハイパーリンクで付録がずれる問題の対応
+\newcounter{chapter_counter}
+\makeatletter
+\@addtoreset{chapter}{chapter_counter}
+\makeatother
+
+\begin{document}
+
+% 表紙 (B4卒業論文)
+\thesis{卒業論文}
+\date{2021年xx月xx日}
+\title{
+    \scalebox{1.5}{論文タイトルを入れる入れる}\\
+    \scalebox{1.5}{君の名は}\\
+    \scalebox{}{}\\
+    \scalebox{1.0}{Please input your thesis title}\\
+    \scalebox{1.0}{Your name}
+}
+\teacher{白濱 亜嵐 教授}
+\organization{
+    {横浜国立大学 理工学部 機械・材料・海洋系学科}\\
+    {海洋空間のシステムデザインEP}
+}
+\author{111111 横浜 海洋}
+
+% 表紙 (M2修士論文)
+% \thesis{修士論文}
+% \date{2021年xx月xx日}
+% \title{
+%     \scalebox{1.5}{論文タイトルを入れる入れる}\\
+%     \scalebox{1.5}{君の名は}
+%    \scalebox{}{}\\
+%    \scalebox{1.0}{Please input your thesis title}\\
+%    \scalebox{1.0}{Your name}
+% }
+% \teacher{白濱 亜嵐 教授}
+% \organization{
+%     {横浜国立大学 理工学府 機械・材料・海洋系工学専攻}\\
+%     {海洋空間教育プログラム}
+% }
+% \author{111111 横浜 海洋}
+
+\maketitle
+
+% 前書き
+\include{0_abstract}
+\frontmatter
+\tableofcontents
+\listoffigures
+\listoftables
+
+% 本文
+\mainmatter
+\include{1_introduction}
+\include{2_related_research}
+\include{3_proposed_method}
+\include{4_case_study}
+\include{5_discussion}
+\include{6_conclusion}
+\include{7_acknowledgement}
+\include{8_bibliography}
+\include{appendix1} % 使い方を示す例
+\include{appendix2}
+\include{appendix3}
+
+% 後書き
+\backmatter
+\appendix
+
+\printindex
+\end{document}
